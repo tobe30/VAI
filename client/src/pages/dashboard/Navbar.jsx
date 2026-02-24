@@ -1,8 +1,8 @@
-import { Eye, MenuIcon, XIcon, Zap } from "lucide-react";
+import { Eye, MenuIcon, XIcon, Zap, User } from "lucide-react";
 import { useState } from "react";
 import { motion } from "motion/react";
-import { navlinks } from "../data/navlinks";
 import { NavLink } from "react-router-dom";
+import { navlinks } from "../../data/navlinks";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,39 +16,42 @@ export default function Navbar() {
         viewport={{ once: true }}
         transition={{ type: "spring", stiffness: 250, damping: 70, mass: 1 }}
       >
+        {/* LOGO */}
+        <a href="">
+          <img
+            src="/assets/vai.png"
+            alt="VAI logo"
+            className="h-30 w-auto object-contain"
+          />
+        </a>
 
+        {/* DESKTOP RIGHT SIDE */}
+        <div className="hidden md:flex items-center gap-4">
 
- <a href="">
-<img
-src="/assets/vai.png"
-      alt="VAI logo"
-      className="h-30 w-auto object-contain"
-/>
+          {/* Dashboard Button */}
+          <button className="px-6 py-2.5 bg-blue-600 hover:bg-blue-700 active:scale-95 transition-all rounded-full text-white">
+            Dashboard
+          </button>
 
-                </a>
+          {/* Start Interview Button (NO BG) */}
+          <button className="px-4 py-2.5 text-blue-600 hover:underline transition">
+            Start Interview
+          </button>
 
+          {/* Profile Icon */}
+          <div className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center cursor-pointer hover:bg-blue-600 transition">
+            <User size={20} />
+          </div>
 
-        <div className="hidden md:flex items-center gap-8 transition duration-500">
-          {navlinks.map((link) => (
-            <NavLink
-              key={link.name}
-              to={link.href}
-              className="hover:text-blue-500 transition"
-            >
-              {link.name}
-            </NavLink>
-          ))}
         </div>
 
-        <button className="hidden md:block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 active:scale-95 transition-all rounded-full">
-          Start free trial
-        </button>
-
+        {/* MOBILE MENU BUTTON */}
         <button onClick={() => setIsOpen(true)} className="md:hidden">
           <MenuIcon size={26} className="active:scale-90 transition" />
         </button>
       </motion.nav>
 
+      {/* MOBILE MENU */}
       <div
         className={`fixed inset-0 z-100 bg-black/40 backdrop-blur flex flex-col items-center justify-center text-lg gap-8 md:hidden transition-transform duration-400 ${
           isOpen ? "translate-x-0" : "-translate-x-full"

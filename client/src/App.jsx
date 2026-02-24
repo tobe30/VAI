@@ -3,8 +3,8 @@ import HomePage from "./pages/HomePage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import LenisScroll from "./components/LenisScroll";
-import Dashboard from "./pages/dashboard/dashboard";
-import Interview from "./pages/dashboard/interview";
+import Dashboard from "./pages/dashboard/Dashboard";
+import Interview from "./pages/dashboard/Interview";
 
 export default function App() {
     return (

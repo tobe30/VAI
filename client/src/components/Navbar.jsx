@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { navlinks } from "../data/navlinks";
 import { NavLink } from "react-router-dom";
+import { SignInButton } from "@clerk/clerk-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,6 +40,7 @@ src="/assets/vai.png"
             </NavLink>
           ))}
         </div>
+          <SignInButton/>
 
         <button className="hidden md:block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 active:scale-95 transition-all rounded-full">
           Start free trial

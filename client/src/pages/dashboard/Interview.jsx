@@ -124,13 +124,14 @@ export default function Interview({ onEnd, questionType }) {
       {/* Top Bar */}
       <header className="flex items-center justify-between border-b border-blue-500/20 bg-[#0F172A]/70 backdrop-blur-sm px-5 py-2.5">
         <div className="flex items-center gap-3">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-500/10 border border-blue-500/20">
-            <Code2 size={16} className="text-blue-400" />
-          </div>
+          <a href="">
+      <img
+      src="/assets/vai.png"
+            alt="VAI logo"
+            className="h-15 w-auto object-contain"
+      />
 
-          <span className="font-bold text-sm">
-            AI Interview<span className="text-blue-400">.</span>
-          </span>
+                      </a>
 
           {currentQuestion && (
             <>

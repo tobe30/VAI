@@ -40,7 +40,7 @@ src="/assets/vai.png"
             </NavLink>
           ))}
         </div>
-          <SignInButton/>
+          <SignInButton mode="modal"/>
 
         <button className="hidden md:block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 active:scale-95 transition-all rounded-full">
           Start free trial

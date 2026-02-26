@@ -12,12 +12,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@stream-io/node-sdk": "^0.7.42",
+    "@stream-io/video-react-sdk": "^1.24.0",
     "axios": "^1.13.5",
     "cors": "^2.8.6",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "inngest": "^3.44.3",
-    "mongoose": "^9.2.2"
+    "mongoose": "^9.2.2",
+    "stream-chat": "^9.23.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"

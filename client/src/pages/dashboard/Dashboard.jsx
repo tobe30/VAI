@@ -40,7 +40,7 @@ function useInterviewStats() {
 
 const Dashboard = () => {
   const stats = useInterviewStats();
-  const user = { name: "Tobe" }; // dummy user
+  const user = { name: "John Doe" }; // dummy user
   const onStart = () => alert("Start Interview clicked!"); // dummy handler
   const navigate = useNavigate();
   

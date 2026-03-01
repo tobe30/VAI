@@ -4,6 +4,11 @@ import { serve } from 'inngest/express';
 import 'dotenv/config';
 import { connectDB } from "./lib/db.js";
 import {inngest, functions} from "./lib/inngest.js";
+import { clerkMiddleware } from '@clerk/express'
+import chatRoutes from './routes/chatRoutes.js';
+import sessionRoute from './routes/sessionRoutes.js';
+import aiRoutes from './routes/aiRoutes.js';
+
 
 const app = express();
 
@@ -15,7 +20,12 @@ app.use(cors({
   ],
   credentials: true,
 }));
+app.use(clerkMiddleware()); //this adds auth field to req object: req.auth()
 app.use("/api/inngest", serve({client:inngest, functions}));
+app.use("/api/chat", chatRoutes); //chat routes
+app.use("/api/sessions", sessionRoute); //chat routes
+app.use("/api/interview", aiRoutes); //chat routes
+
 
 app.get("/", (req, res) => {
   res.send("server is running testing")

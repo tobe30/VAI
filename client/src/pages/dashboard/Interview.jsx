@@ -124,7 +124,7 @@ export default function Interview({ onEnd, questionType }) {
       {/* Top Bar */}
       <header className="flex items-center justify-between border-b border-blue-500/20 bg-[#0F172A]/70 backdrop-blur-sm px-5 py-2.5">
         <div className="flex items-center gap-3">
-          <a href="">
+          <a href="/">
       <img
       src="/assets/vai.png"
             alt="VAI logo"

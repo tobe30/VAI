@@ -35,7 +35,7 @@ export default function Navbar() {
 
           {/* Start Interview Button (NO BG) */}
           <button className="px-4 py-2.5 text-blue-600 hover:underline transition">
-            Start Interview
+            Code Interview
           </button>
 
           {/* Profile Icon */}

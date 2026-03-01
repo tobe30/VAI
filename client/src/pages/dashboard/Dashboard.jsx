@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import StatsCards from "../../components/StatsCards";
 import Navbar from "./Navbar";
+import { useNavigate } from "react-router-dom";
 
 // Mock stats — replace with real API data later
 function useInterviewStats() {
@@ -41,6 +42,8 @@ const Dashboard = () => {
   const stats = useInterviewStats();
   const user = { name: "Tobe" }; // dummy user
   const onStart = () => alert("Start Interview clicked!"); // dummy handler
+  const navigate = useNavigate();
+  
 
   return (
     <div className="min-h-screen">
@@ -58,10 +61,12 @@ const Dashboard = () => {
           </div>
           <button
             className="btn btn-primary gap-2 shadow-lg shadow-primary/30"
-            onClick={onStart}
+            onClick={() => {
+              navigate("/interview");
+            }}
           >
             <Play size={18} />
-            Create Session
+            Start Interview
           </button>
         </div>
 

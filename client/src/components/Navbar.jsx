@@ -2,11 +2,13 @@ import { Eye, MenuIcon, XIcon, Zap } from "lucide-react";
 import { useState } from "react";
 import { motion } from "motion/react";
 import { navlinks } from "../data/navlinks";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { SignInButton } from "@clerk/clerk-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+
 
   return (
     <>
@@ -40,9 +42,9 @@ src="/assets/vai.png"
             </NavLink>
           ))}
         </div>
-          <SignInButton mode="modal"/>
+          {/* <SignInButton mode="modal"/> */}
 
-        <button className="hidden md:block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 active:scale-95 transition-all rounded-full">
+        <button onClick={()=> {navigate("/dashboard")}} className="hidden md:block px-6 py-2.5 bg-blue-600 hover:bg-blue-700 active:scale-95 transition-all rounded-full">
           Start free trial
         </button>
 
@@ -66,12 +68,15 @@ src="/assets/vai.png"
           </NavLink>
         ))}
 
-        <button
-          onClick={() => setIsOpen(false)}
-          className="active:ring-3 active:ring-white aspect-square size-10 p-1 items-center justify-center bg-blue-600 hover:bg-blue-700 transition text-white rounded-md flex"
-        >
-          <XIcon />
-        </button>
+       <button
+  onClick={() => {
+    setIsOpen(false);
+    navigate("/dashboard"); // change this
+  }}
+  className="active:ring-3 active:ring-white aspect-square size-10 p-1 items-center justify-center bg-blue-600 hover:bg-blue-700 transition text-white rounded-md flex"
+>
+  <XIcon />
+</button>
       </div>
     </>
   );

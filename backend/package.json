@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@clerk/express": "^1.7.74",
     "@stream-io/node-sdk": "^0.7.42",
     "@stream-io/video-react-sdk": "^1.24.0",
     "axios": "^1.13.5",
@@ -20,6 +21,7 @@
     "express": "^5.2.1",
     "inngest": "^3.44.3",
     "mongoose": "^9.2.2",
+    "openai": "^6.25.0",
     "stream-chat": "^9.23.0"
   },
   "devDependencies": {
